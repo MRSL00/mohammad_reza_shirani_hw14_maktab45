@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        ProFile
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="display-1 text-center text-muted font-weight-bold">
+            ProFile
+        </h1>
+        <form class="ml-3" method="POST">
+
+
+            <input type="text" class="col-5 form-control border-dark br mt-3" value=<%= username %>  name="user" placeholder="Username">
+
+
+            <input type="email" class="col-5 form-control border-dark br mt-3" value=<%= email %> name="email" placeholder="Email">
+
+
+            <input type="text" class="col-5 form-control border-dark br mt-3" value=<%= password %> name="pass" placeholder="Password">
+
+            <input type="submit" value="update"
+                class="pro col-4 btn btn btn-success font-weight-bold br p-2 mt-3 ">
+            <a href="/logout/<%= username %> " class="col-2 btn btn-dark font-weight-bold br p-2  mt-3 ">Log Out</a>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="js/profile.js"></script>
+</body>
+
+</html>

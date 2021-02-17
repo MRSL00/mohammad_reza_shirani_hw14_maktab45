@@ -1,0 +1,27 @@
+body {
+  background-image: url("../img/1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.br {
+  border-radius: 20px;
+}
+.col-5 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 57.666667%;
+}
+.ml-3,
+.mx-3 {
+  margin-left: 19rem !important;
+}
+
+.col-4 {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 40.333333%;
+}
