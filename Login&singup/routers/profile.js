@@ -3,6 +3,9 @@ const router = express.Router();
 const path = require("path");
 const fs = require("fs");
 const merge = require("../tools/merge");
+let users = JSON.parse(
+  fs.readFileSync(path.join(__dirname, "../public/users.json"), "utf-8")
+);
 
 router.use(express.static(path.join(__dirname, "../views")));
 
@@ -17,19 +20,14 @@ router.get("/profile", (req, res) => {
 });
 
 router.post("/profile", (req, res) => {
-  let users = JSON.parse(
+  users = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../public/users.json"), "utf-8")
   );
   let find = users.find((el) => el.username === global.finduser);
   const valid_pass = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-  if (!req.body.user || !req.body.email || !req.body.pass) {
-    res.send("empty");
-  } else {
-    if (
-      users.map((el) => el.username).includes(req.body.user) ||
-      users.map((el) => el.email).includes(req.body.email)
-    ) {
-      res.send("Error");
+  if (find.isLoggedIn===true) {
+    if (!req.body.user || !req.body.email || !req.body.pass) {
+      res.send("empty");
     } else {
       if (req.body.pass.match(valid_pass)) {
         find.username = req.body.user;
@@ -43,6 +41,8 @@ router.post("/profile", (req, res) => {
         res.send("pass");
       }
     }
+  } else {
+    res.send("false");
   }
 });
 module.exports = router;

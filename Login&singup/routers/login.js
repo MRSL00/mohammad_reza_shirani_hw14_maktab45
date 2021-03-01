@@ -14,7 +14,7 @@ router.post("/login", (req, res) => {
   let users = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../public/users.json"), "utf-8")
   );
-  console.log("log: "+users);
+  ;
   let find = users.find(
     (el) => el.username === req.body.user && el.password === req.body.pass
   );
@@ -26,8 +26,8 @@ router.post("/login", (req, res) => {
     } else {
       global.finduser = req.body.user;
 
-      const changeIslog = true;
-      find.isLoggedIn = changeIslog;
+      // const changeIslog = true;
+      find.isLoggedIn = true;
       const update = Array.from(new Set([find, ...users]));
       fs.writeFileSync(path.join(__dirname,"../public/users.json"), JSON.stringify(update));
       res.send("ok");

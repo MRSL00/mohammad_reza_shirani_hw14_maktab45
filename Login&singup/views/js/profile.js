@@ -21,6 +21,8 @@ $(document).ready(function () {
           alert("رمز عبور باید حداقل 8 کارکتر و حداقل یک حرف و یک عدد باشد");
         } else if (response === "empty") {
           alert("فیلد های خالی را پر نمایید");
+        }else if (response === "false") {
+          $(location).attr("href", "http://localhost:3000/login");
         }
       },
     });
